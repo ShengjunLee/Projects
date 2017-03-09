@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/haroldjs.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+		<style>
+			.box{
+				width: 200px;
+				height: 200px;
+				margin: 200px 400px;
+				position: absolute;
+				background-color: #330000;
+				border: 1px solid #222222;
+			}
+		</style>
+	<body>
+		<div class="box">
+			
+		</div>
+		<button id="btn">stop</button>
+		<button id="btn2">begin</button>
+		<input type="button" value="打开GOOGLE和micros" onclick="open_url()" />
+	</body>
+	<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		function open_url(){
+			window.open("http://microsoft.com");
+			window.open("http://google.com");
+		}
+	</script>
+</html>
