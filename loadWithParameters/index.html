@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>loadWithParameters</title>
+	</head>
+	<body>
+		<button id="btn">点击我实现load函数与后端的交互</button>
+		<label for="parameters"></label>
+		<select name="select">
+			<option value="0" >url</option>
+			<option value="1" selected="selected">data</option>
+			<option value="2">callback</option>
+		</select>
+		<div class="conten">
+		
+			
+		</div>
+	</body>
+	<script src='js/jquery-1.11.3.js'></script>
+	<script>
+		$('#btn').on('click',function(){
+		
+			$val = $('select option:selected').val();
+			$('.conten').empty().load("loadWithParameters.php",{ name : $val});
+		
+		
+		});
+		
+	
+	
+	</script>
+</html>

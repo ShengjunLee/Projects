@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<a id="forcepop" href="#">Force to open a new window</a>
+		
+	</body>
+	<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8">
+		
+	</script>
+	<script type="text/javascript">
+		$('#forcepop').live('click',function(){
+			var forcewindow = window.open(",",'width=200px,height=200px');
+			if(window.focus()){
+				forcewindow.focus();
+			}	
+		});
+		
+	</script>
+	
+</html>

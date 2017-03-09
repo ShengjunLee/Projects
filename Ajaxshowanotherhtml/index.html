@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">点击我加载同根目录下的HTML文件</button>
+	</body>
+	
+	
+	<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$("#btn").on('click',function(){
+			$('body').load('new_file.html',
+			function(responseTxt,statusTxt,xhr){
+				if(statusTxt=='success')
+					alert('外部加载成功');
+				if(statusTxt =='error')
+					alert('外部加载失败'+xhr.status+xhr.statusText);
+			})
+		});
+	</script>
+
+</html>
