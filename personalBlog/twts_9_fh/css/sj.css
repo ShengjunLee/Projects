@@ -1,0 +1,75 @@
+	.top{
+		margin-top: 500px;
+	}
+	.fl{
+		float: left;
+	}
+	.header-description3{
+	background: url(../images/header_bg.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 1000px;
+    position: relative;
+    display: table;
+	width: 100%;
+	color: #fff;
+	}
+	.myessay{
+		margin:200px auto;
+		width: 1300px;
+		height: 1000px;
+	
+		
+	}
+	.each{
+		width: 100%;
+		height: 250px;
+	}
+	.date{
+		width: 250px;
+		height: 100%;
+		margin-left: 30px;
+	}
+	.conten{
+		width: 900px;
+		height: 100%;
+		margin-left: 119px;
+	}
+	.datede{
+		font-size: 20px;
+		margin-left: 70px;
+		margin-top: 30px;
+	}
+	.kind{
+		font-size: 20px;
+		margin-left: 70px;
+		margin-top: 20px;
+	}
+	.conten-title {
+		font-size: 30px;
+		font-weight: bolder;
+		margin-left: 100px;
+		margin-top: 30px;
+		
+	}
+	.conten-title a{
+		color: #fff;
+	}
+	.autor{
+		font-size: 22px;
+		color: #907fbf;
+		margin-left: 140px;
+		margin-top: 10px;
+		
+	}
+	.simpily div{
+		font-size: 20px;
+		color: #907fbf;
+		line-height: 20px;
+		margin-top: 20px;
+		width: 800px;
+		margin-left:100px ;
+	}
+	.hide{
+		display: none;
+	}
