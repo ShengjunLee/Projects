@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+    <fieldset>
+        <legend>用户登录界面</legend>
+        <form action="server.php" method="post">
+            user:
+            <input type="text" placeholder="请输入用户名" name="username" id="username"><br/>
+            pwd:
+            <input type="password" placeholder="请输入密码" name="password" id="password"><br/>
+            <button id="btn" type="submit">提交</button>
+
+        </form>
+        <div class="conten">
+
+        </div>
+    </fieldset>
+</body>
+<script src="js/jquery-1.11.3.js"></script>
+<script>
+/*
+* 1.检查用户名是否为空，如果为空return false----> contenbox提示
+* 2.密码    return false  contenbox提示
+* 3.提交用户名和密码到PHP界面
+* */
+    
+        $('#btn').on('click',function(){
+            if($('#username').val()==''){
+                $('.conten').empty().text("请输入用户名");
+                return false;
+            }
+            if($('#password').val()==''){
+                $('.conten').empty().text("请输入密码");
+                return false;
+            }
+        });
+
+
+ 
+</script>
+</html>
