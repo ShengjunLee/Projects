@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html"; charset='utf8' />
+		<title></title>
+	</head>
+	<body>
+		<button id="btn">点击我显示网站的开发日志</button>
+	</body>
+	<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$("#btn").on('click',function(){
+			$("body").load('开发文档.txt');
+		});
+	</script>
+
+
+</html>

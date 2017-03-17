@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<textarea type="text" class="limitText" maxlength="200" data-size="200" placeholder="请输入你内容，少于200字.." name="intro" ></textarea>
+		<p>你还可以输入<span>100</span>字</p>
+		<button id="myBtn">点击</button>
+	</body>
+	<script src="js/jquery-1.11.3.js"></script>
+	<script>
+		$(function(){
+			var myTextarea = $('textarea');
+			var maxlen = $('textarea').attr('maxlength');
+			var myBtn = $('#myBtn');
+			myTextarea.bind('keyup keydown',function(){
+				var len = myTextarea.val().length;
+				var validnum = maxlen - len;
+				$('span').text(validnum);
+			})
+			
+			
+		});
+	</script>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "myfirstproject",
+  "description": "first project",
+  "main": "index.html",
+  "keywords": [
+    "jquery"
+  ],
+  "authors": [
+    "shengjun"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_67bucne2yhu2fbt9.css"/>
+		<style>
+			.mk_xingbox i{font-size:20px;}
+			.mk_xingbox i.on{color:red;}
+		</style>
+	</head>
+	<body>
+		
+		<span class="mk_xingbox">
+			<i class="iconfont on icon-xingxing01"></i>
+			<i class="iconfont icon-xingxing01"></i>
+			<i class="iconfont icon-xingxing01"></i>
+			<i class="iconfont icon-xingxing01"></i>
+			<i class="iconfont icon-xingxing01"></i>
+		</span>
+		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+		<script>
+			
+			$(function(){
+				$(".mk_xingbox").find("i").bind("click",function(){
+					var index = $(this).index();
+					/*$(".mk_xingbox"li:lt(index)).addClass('on');*/
+					/*$(".mk_xingbox").find("i:lt("+index+")").addClass("on");
+					$(".mk_xingbox").find("i:gt("+index+")").removeClass("on");*/
+					$(".mk_xingbox i:lt("+index+1+")").addClass('on');
+					$(".mk_xingbox i:gt("+index+")").removeClass('on');
+				})
+			})
+		</script>
+	</body>
+</html>

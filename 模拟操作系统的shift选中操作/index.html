@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>梦柯教育折叠菜单</title>
+	</head>
+	<body>
+		
+		
+		<style>
+			*{padding:0;margin:0}
+			body{font-size:14px;font-family:"微软雅黑";}
+			a{text-decoration:none;color:#333;}	
+			ul li{list-style:none;}
+			.helpbox{width:640px;background:#eee;margin:50px auto;padding:20px;}
+			.helpbox li{height:35px;line-height: 35px;background: #fff;margin-bottom: 10px;}
+			.helpbox li.on{background:red;}
+		</style>
+		
+		<div class="helpbox">
+			<ul>
+				<li><input type="checkbox"/>0</li>
+				<li><input type="checkbox"/>1</li>
+				<li><input type="checkbox"/>2</li>
+				<li><input type="checkbox"/>3</li>
+				<li><input type="checkbox"/>4</li>
+				<li><input type="checkbox"/>5</li>
+				<li><input type="checkbox"/>6</li>
+				<li><input type="checkbox"/>7</li>
+				<li><input type="checkbox"/>8</li>
+				<li><input type="checkbox"/>9</li>
+			</ul>
+		</div>
+		
+		<div id="result"></div>
+		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+		<script>
+			$(function(){
+				/*先实现鼠标点击*/
+				var bindex = 0; 
+				var eindex = 0;
+				var li = $('.helpbox li');
+				li.on('click',function(e){
+					if(e.shiftKey)
+					{
+						eindex = $(this).index();
+						console.log("bindex"+bindex+"eindex"+eindex);
+					}else if(e.ctrlKey){
+						
+					}else
+					{
+						bindex = $(this).index;
+				        /*重复只点击选项的话那么eindex也应该设置为=bindex*/
+				       	eindex = bindex;
+					}
+				})
+				
+			});
+		</script>
+	</body>
+</html>

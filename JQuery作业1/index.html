@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<!--/*关于表单的练习*/-->
+		<form action="get">
+			<fieldset id="form">
+				<legend>作业1表单样式的获取</legend>
+				<div>
+					<label for="username">姓名</label>
+					<input type="text"  id="username" value="请输入你的用户名" />
+				</div>
+				<div>
+					<label for="pass">密码</label>
+					<input type="password"  id="pass" value="" />
+				</div>
+				<div>
+					请选择性别
+					<input type="radio" name="male" id="male" value="1" checked="checked"/>男
+					<input type="radio" name="female" id="female" value="0" />女
+				</div>
+				<div>
+					你爱好的运动是：
+					<input type="checkbox" name="hobby"  value="lq" checked="checked"/>篮球
+					<input type="checkbox" name="hobby"  value="zq" checked="checked"/>足球
+					<input type="checkbox" name="hobby"  value="yy" checked="checked"/>游泳
+					<input type="checkbox" name="hobby"  value="pp" />乒乓球
+					<input type="checkbox" name="hobby"  value="tw" />跳舞
+				</div>
+			</fieldset>
+		</form>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.11.3.js">
+	</script>
+	<script>
+		$(function(){
+			/*取名字的值*/
+			var $temp = $("#username").val();
+			console.log($temp);
+			/*取性别为男的值*/
+			console.log("性别为男的是"+$('#male').val());
+			/*获取爱好的值*/
+			var temp = "";
+				$("input[type='checkbox']").each(function(){
+					if($(this).prop('checked'))
+						temp += $(this).val();
+				});
+				console.log(temp);
+			
+		});
+	</script>
+</html>
