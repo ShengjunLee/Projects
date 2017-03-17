@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>阿里巴巴17校招测试题目</title>
+		<style type="text/css">
+		*{padding: 0;margin: 0;}
+		ul{border: 1px solid #ccc;display: none;}
+		ul li{list-style: none;cursor: pointer;}
+		body{font-family: "微软雅黑";font-size: 14px; padding: 100px;}
+		.select{width: 100px;height: 14px; }	
+		.select input{width: 98%;height:100%;text-indent: 0.5em;margin-left: -1px;margin-top: -1px;}
+		
+		
+	
+		</style>
+	</head>
+	<body>
+		<div class="select" id="select"></div>
+	</body>
+	<script type="text/javascript">
+		function select(options){
+			//获取DIV对象
+			var seleDom = document.getElementById(options.srcNode.replace("#",""));
+			//构造DIV内部元素
+			var html = "<input/><ul>"
+			var datas = options.data;
+			for (i=0;i<datas.length;i++) {
+				html+="<li>"+datas[i]+"</li>";
+			}
+			html+= "</ul>";
+			//DIV添加
+			seleDom.innerHTML = html;
+			//单击INPUT框时，修改DISPALAY
+			//获取INPUT对象
+			var inputobj = document.getElementsByTagName('input');
+			var input = inputobj[0];
+			//获取UL对象
+			var ulDom = document.getElementsByTagName('ul');			
+			input.onfocus = function(e){
+				//显示
+				ulDom[0].style.display ="block";
+				//为每一个LI绑定点击事件
+				var liDoms = document.getElementsByTagName('li');
+				for (i=0;i<liDoms.length;i++) {
+					liDoms[i].onclick = function(e){
+						e.value = this.innerHTML;
+						options.onChange(e,input);
+						//点击后取消DISPLAY
+						ulDom[0].style.display ="none";
+						
+					}
+					
+				}
+				
+			}
+		};		
+		
+		
+		// eg
+	select({
+	  srcNode: '#select',
+	  data: ['北京','上海','杭州'],
+	  onChange:function(ev,input){
+			input.value = ev.value;   	
+	  }
+	});
+	</script>
+</html>

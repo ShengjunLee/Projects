@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>阿里巴巴17校招测试题目</title>
+		<style type="text/css">
+		*{padding: 0;margin: 0;}
+		ul{border: 1px solid #ccc;display: none;}
+		ul li{list-style: none;cursor: pointer;border-bottom: 1px solid #ccc;}
+		body{font-family: "微软雅黑";font-size: 14px; padding: 100px;}
+		.select{width: 100px;height: 14px; }	
+		.select input{width: 98%;height:100%;margin-left: -1px;margin-top: -1px;}
+		
+		
+	
+		</style>
+	</head>
+	<body>
+		<div class="select" id="select"></div>
+	</body>
+	<script type="text/javascript" src="js/jquery-1.11.3.js">
+		
+	</script>
+	<script type="text/javascript">
+		function select(options){
+			//获取DIV
+			$div = $('.select');
+			//构造UL
+			var html = '<input/><ul>';
+			var datas = options.data;
+			for (i = 0 ; i< datas.length; i++) {
+				html += "<li>"+datas[i]+"</li>";
+				
+			}
+			html += '</ul>';
+			//apend
+			$div.append(html);
+			//show
+			//first get the input element
+			$inDom = $('input');
+			//second  get the ul element
+			$ulDom = $('ul');
+			$liDom = $('ul li');
+			$inDom.on('focus',function(){
+				$ulDom.show();
+				$liDom.on('click',function(e){
+					var text = $(this).text();
+					e.value = text;
+					options.onChange(e,$inDom[0]);
+					$ulDom.hide();
+					
+				})
+			})
+			
+		};		
+		
+		
+		// eg
+	select({
+	  srcNode: '#select',
+	  data: ['北京','上海','杭州'],
+	  onChange:function(ev,input){
+			input.value = ev.value;   	
+	  }
+	});
+	</script>
+</html>
