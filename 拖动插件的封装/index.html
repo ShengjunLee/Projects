@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>拖动插件的封装</title>
+		<style type="text/css">
+			body{
+				position: relative;
+			}
+			.conten{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				background: #ccc;
+				left: 0px;
+				top: 0px;
+			}
+			.conten2{
+				width: 100px;
+				height: 100px;
+				position: absolute;
+				background: #111;
+				left: 200px;
+				top: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="conten">
+			1
+		</div>
+		<div class="conten2">
+			2
+		</div>
+	</body>
+	<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/harold.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+			$(function(){
+				
+				$('.conten2').harold_drag();
+				$('.conten').harold_drag();
+			});
+			
+	</script>
+
+</html>

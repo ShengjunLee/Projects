@@ -41,6 +41,7 @@
 				var eindex = 0;
 				var li = $('.helpbox li');
 				li.on('click',function(e){
+					console.log(e.shiftKey);
 					if(e.shiftKey)
 					{
 						eindex = $(this).index();

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			*{padding: 0;margin: 0;}
+			body{padding: 20px;}
+			table{border-collapse: collapse;width: 100%;}
+			table th,td{border: 1px solid #ccc;padding: 4px;text-align: left;}
+			iconfont{font-size: 20px;}
+		</style>
+		<link rel="stylesheet" type="text/css" href="http://at.alicdn.com/t/font_m6nueror6l2fbt9.css"/>
+	</head>
+	<body>
+		<table >
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>姓名</th>
+					<th>金额</td>
+					<th>日期</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>2</td>
+					<td>马亿</td>
+					<td>$101</td>
+					<td>2016-01-10</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>林颢</td>
+					<td>$102</td>
+					<td>2015-05-10</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>猪洪磊</td>
+					<td>$103</td>
+					<td>2015/06/12</td>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>李胜军</td>
+					<td>$100</td>
+					<td>2015年01月10</td>
+				</tr>
+			</tbody>			
+		</table>
+	</body>
+	<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var flag = 1;
+		$('thead>tr').find('th').prepend("<i class='iconfont icon-icon55'></i>");
+		//添加点击事件
+		$('th').on('click',function(){
+			//获取点击的第几列
+			var index = $(this).index();
+			var pindex = $(this).parent('tr').index();
+			//先把tr对象存到数组当中
+			var arr = $('table').find('tr:gt(0)').get();
+			//排序，拿到当前index的属性值
+			arr.sort(function(a,b){
+				if(index==0){
+					var val1 = $(a).find("td:eq("+index+")").text(); 
+					var val2 = $(b).find("td:eq("+index+")").text(); 
+					if(val1 > val2) return flag;
+					if(val1 < val2) return -flag;
+					else return 0;
+				}
+				else if(index ==2){
+					var val1 = $(a).find("td:eq("+index+")").text(); 
+					var val2 = $(b).find("td:eq("+index+")").text(); 
+					var nval1 = val1.replace(/\D*/,"");
+					var nval2 = val2.replace(/\D*/,"");
+					if(nval1 > nval2) return flag;
+					if(nval1 < nval2) return -flag;
+					else return 0;
+				}
+				else if(index ==3){
+					var val1 = $(a).find("td:eq("+index+")").text(); 
+					var val2 = $(b).find("td:eq("+index+")").text();
+					var nval1 = val1.replace(/\D/g,"-");
+					var nval2 = val2.replace(/\D/g,"-");
+					var ntime1 =new Date(nval1).getTime(); 
+					var ntime2 =new Date(nval2).getTime(); 	
+					if(ntime1 > ntime2) return flag;
+					if(ntime1 < ntime2) return -flag;
+					else return 0;
+				}
+				 
+			})
+			//将arr重新导入到界面当中
+			for (i=0;i<arr.length;i++) {
+				$('table').append($(arr[i]));
+			}
+			flag = -flag;
+		})
+	</script>
+</html>
